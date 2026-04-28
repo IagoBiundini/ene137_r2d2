@@ -294,21 +294,10 @@
   </joint>
 
   <link name="box">
-    <visual>
-      <geometry>
-        <box size="0.08 0.2 0.1"/>
-      </geometry>
-      <material name="white"/>
-    </visual>
-    <collision>
-      <geometry>
-        <box size="0.08 0.2 0.1"/>
-      </geometry>
-    </collision>
     <inertial>
-      <mass value="0.05"/>
-      <inertia ixx="0.001" ixy="0.0" ixz="0.0"
-               iyy="0.001" iyz="0.0" izz="0.001"/>
+      <mass value="0.001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
+               iyy="0.00001" iyz="0.0" izz="0.00001"/>
     </inertial>
   </link>
 
@@ -319,21 +308,10 @@
   </joint>
 
   <link name="camera_rgb_link">
-    <visual>
-      <geometry>
-        <box size="0.05 0.08 0.05"/>
-      </geometry>
-      <material name="black"/>
-    </visual>
-    <collision>
-      <geometry>
-        <box size="0.05 0.08 0.05"/>
-      </geometry>
-    </collision>
     <inertial>
-      <mass value="0.01"/>
-      <inertia ixx="0.0001" ixy="0.0" ixz="0.0"
-               iyy="0.0001" iyz="0.0" izz="0.0001"/>
+      <mass value="0.001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
+               iyy="0.00001" iyz="0.0" izz="0.00001"/>
     </inertial>
   </link>
 
@@ -352,21 +330,10 @@
   </joint>
 
   <link name="lidar3d_link">
-    <visual>
-      <geometry>
-        <cylinder radius="0.04" length="0.06"/>
-      </geometry>
-      <material name="black"/>
-    </visual>
-    <collision>
-      <geometry>
-        <cylinder radius="0.04" length="0.06"/>
-      </geometry>
-    </collision>
     <inertial>
-      <mass value="0.02"/>
-      <inertia ixx="0.0002" ixy="0.0" ixz="0.0"
-               iyy="0.0002" iyz="0.0" izz="0.0002"/>
+      <mass value="0.001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
+               iyy="0.00001" iyz="0.0" izz="0.00001"/>
     </inertial>
   </link>
 
