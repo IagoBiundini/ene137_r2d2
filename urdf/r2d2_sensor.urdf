@@ -294,6 +294,12 @@
   </joint>
 
   <link name="box">
+    <visual>
+      <geometry>
+        <box size="0.08 0.2 0.1"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
     <inertial>
       <mass value="0.001"/>
       <inertia ixx="0.00001" ixy="0.0" ixz="0.0"
