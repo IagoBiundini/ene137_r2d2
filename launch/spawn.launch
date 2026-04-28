@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="world" default="worlds/empty.world"/>
+  <arg name="x" default="0.0"/>
+  <arg name="y" default="0.0"/>
+  <arg name="z" default="0.35"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world)" />
+  </include>
+
+  <param name="robot_description"
+         command="$(find xacro)/xacro $(find r2d2)/urdf/r2d2.urdf" />
+
+  <node name="spawn_robot"
+        pkg="gazebo_ros"
+        type="spawn_model"
+        args="-urdf -model r2d2 -param robot_description
+              -x $(arg x) -y $(arg y) -z $(arg z)"/>
+
+  <node name="head_moviment_node"
+        pkg="r2d2"
+        type="head_mov.py"
+        output="screen">
+    <param name="model_name" value="r2d2"/>
+  </node>
+</launch>

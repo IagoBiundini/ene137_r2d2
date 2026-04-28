@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="model" default="$(find r2d2)/urdf/r2d2.urdf"/>
+  <arg name="gui" default="false" />
+
+  <param name="robot_description"
+         command="$(find xacro)/xacro $(arg model)" />
+
+  <node if="$(arg gui)" name="joint_state_publisher_gui"
+        pkg="joint_state_publisher_gui"
+        type="joint_state_publisher_gui" />
+
+  <node name="robot_state_publisher"
+        pkg="robot_state_publisher"
+        type="robot_state_publisher" />
+
+  <node name="head_moviment_node"
+        pkg="r2d2"
+        type="head_mov.py"
+        output="screen" />
+
+  <node name="rviz"
+        pkg="rviz"
+        type="rviz" />
+</launch>
